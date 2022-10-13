@@ -9,7 +9,7 @@
 </head>
 </head>
 <body>
-<h1 align="center">Welcome to Mithun Software Solutions. Bengaluru,Karnataka </h1>
+<h1 align="center">Learning CICD PIPELINE webhook </h1>
 <h1 align="center"> Deployed the war successfully in the Tomcat server</h1>
 <hr>
 <br>
