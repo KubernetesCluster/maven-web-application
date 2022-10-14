@@ -1,4 +1,4 @@
- pipeline{
+  pipeline{
  agent any
  tools{
  maven "maven"
@@ -29,6 +29,16 @@
 	  sh "mvn deploy"
 	  }
    }
+   
+   stage('App Deployment In Tomcat server'){
+      steps{
+      sshagent(['371d53fd-9138-4744-8b32-632aa6d86081']) {
+          sh "scp -o StrictHostKeyChecking=no /var/lib/jenkins/workspace/maven-cicd-pipeline-project/target/maven-web-application.war ec2-user@18.118.8.38:/opt/tomcat/webapps"
+	   
+           }
+	  }
+   }
+   
    
    
  
