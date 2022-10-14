@@ -4,6 +4,7 @@ properties([buildDiscarder(logRotator(artifactDaysToKeepStr: '', artifactNumToKe
    def mavenHome= tool name: "maven"
 	echo "The branch name is : ${env.BRANCH_NAME}"
 	echo "The job name is : ${env.JOB_NAME}"
+	jacoco runAlways: true, skipCopyOfSrcFiles: true
 // Checkout the git code
  stage('CodeCheckout'){
   git branch: 'jenkin-scripted', credentialsId: 'fbd0e2e3-4f82-4812-83f6-61edb7b5fdb0', url: 'https://github.com/KubernetesCluster/maven-web-application.git'
