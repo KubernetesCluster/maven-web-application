@@ -1,5 +1,5 @@
 node{
-build 'dev- $(BUILD_NUMBER)'
+buildName 'dev - ${BUILD_NUMBER}'
 properties([buildDiscarder(logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '5', daysToKeepStr: '', numToKeepStr: '5')), [$class: 'JobLocalConfiguration', changeReasonComment: ''], pipelineTriggers([githubPush()])])
    def mavenHome= tool name: "maven"
 	echo "The branch name is : ${env.BRANCH_NAME}"
