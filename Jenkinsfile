@@ -1,5 +1,4 @@
  pipeline{
-agent any
  
  tools{
  maven "maven"
@@ -18,5 +17,16 @@ agent any
 	 sh "mvn clean package"
 	 }
    }
+   
+   stage('Sonar Report'){
+      steps{
+	  sh "mvn sonar:sonar"
+	  }
+   }
+   
+   
+   
+   
+ 
  } // closing the stages
  }// closing pipeline
