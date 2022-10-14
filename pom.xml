@@ -104,7 +104,7 @@
 	    <snapshotRepository>
 	      <id>nexus</id>
 	      <name>Mithun Technologies Snapshot Nexus Repository </name>
-	      <url>http://3.138.244.253:8081/repository/cdcd-scripted-pipeline-shapshot/</url>
+	      <url>http://3.138.244.253:8081/repository/test-shapshot/</url>
 	    </snapshotRepository>
 	    
 	</distributionManagement>
