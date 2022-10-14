@@ -1,5 +1,6 @@
 node{
 
+properties([buildDiscarder(logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '5', daysToKeepStr: '', numToKeepStr: '5')), [$class: 'JobLocalConfiguration', changeReasonComment: ''], pipelineTriggers([githubPush()])])
    def mavenHome= tool name: "maven"
 	echo "The branch name is : ${env.BRANCH_NAME}"
 	echo "The job name is : ${env.JOB_NAME}"
