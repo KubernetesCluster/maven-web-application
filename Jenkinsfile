@@ -1,4 +1,8 @@
 node{
+	
+parameters {
+  choice choices: ['master', 'development', 'qa', 'uat', 'prod'], description: 'multibranch', name: 'BranchName'
+}
 buildName 'dev - ${BUILD_NUMBER}'
 buildDescription 'Scripted Pipeline Way'
 properties([buildDiscarder(logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '5', daysToKeepStr: '', numToKeepStr: '5')), [$class: 'JobLocalConfiguration', changeReasonComment: ''], pipelineTriggers([githubPush()])])
@@ -8,7 +12,7 @@ properties([buildDiscarder(logRotator(artifactDaysToKeepStr: '', artifactNumToKe
 	jacoco runAlways: true, skipCopyOfSrcFiles: true
 // Checkout the git code
  stage('CodeCheckout'){
-  git branch: 'jenkin-scripted', credentialsId: 'fbd0e2e3-4f82-4812-83f6-61edb7b5fdb0', url: 'https://github.com/KubernetesCluster/maven-web-application.git'
+	 git branch: '${BranchName}', credentialsId: 'fbd0e2e3-4f82-4812-83f6-61edb7b5fdb0', url: 'https://github.com/KubernetesCluster/maven-web-application.git'
  
  }
  
